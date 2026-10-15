@@ -1,0 +1,6 @@
+{
+  "name": "Headcount Matriks Pembelajaran Tahun 4",
+  "description": "Aplikasi pemantauan headcount dan matriks pembelajaran Tahun 4 (2026) untuk 19 orang murid meliputi TOV, Ujian 1, Ujian 2, dan Markah Ujian Sebenar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @media print {
+    /* Standard A4 Paper Size Setup */
+    @page {
+      size: A4 portrait;
+      margin: 8mm 8mm 10mm 8mm;
+    }
+
+    /* Landscape Mode for Wide Multi-column Tables */
+    body.print-landscape {
+      width: 100% !important;
+    }
+
+    body {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      font-size: 11pt !important;
+      line-height: 1.3 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Hide Navigation and Non-Printable Elements */
+    header,
+    nav,
+    aside,
+    button,
+    .print\:hidden {
+      display: none !important;
+    }
+
+    /* Clean A4 Page Break Handling */
+    .break-after-page {
+      break-after: page !important;
+      page-break-after: always !important;
+    }
+
+    /* Muka Depan A4 Single Page Constraint */
+    .cover-page-a4 {
+      height: 268mm !important;
+      max-height: 268mm !important;
+      min-height: 0 !important;
+      break-after: page !important;
+      page-break-after: always !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 5mm !important;
+    }
+
+    .break-inside-avoid {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    /* Table Optimization for A4 Paper */
+    table {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-collapse: collapse !important;
+      page-break-inside: auto !important;
+      font-size: 8.5pt !important;
+    }
+
+    tr {
+      page-break-inside: avoid !important;
+      page-break-after: auto !important;
+    }
+
+    thead {
+      display: table-header-group !important;
+    }
+
+    tfoot {
+      display: table-footer-group !important;
+    }
+
+    th, td {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    /* ========================================================
+       MOD CETAKAN TANPA BACKGROUND (NO BACKGROUND / INK-SAVER)
+       Memastikan cetakan kekal jelas, kemas dan bergaris tajam
+       walaupun pilihan "Background graphics" dipadamkan dalam browser.
+       ======================================================== */
+    .print-no-bg,
+    .print-no-bg * {
+      background-color: transparent !important;
+      background-image: none !important;
+      color: #000000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    .print-no-bg table,
+    .print-no-bg th,
+    .print-no-bg td {
+      border: 1px solid #000000 !important;
+      background-color: #ffffff !important;
+      color: #000000 !important;
+    }
+
+    .print-no-bg thead th {
+      border-bottom: 2px solid #000000 !important;
+      font-weight: 800 !important;
+    }
+
+    .print-no-bg .border,
+    .print-no-bg .border-2,
+    .print-no-bg .border-4 {
+      border-color: #000000 !important;
+    }
+
+    /* Ensure SVG vector graphics always print with full contrast */
+    svg,
+    svg * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* High-contrast Print Bar that stays visible in both print and preview */
+    .print-bar-fill,
+    .print-no-bg .print-bar-fill {
+      background-color: #0f172a !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .print-bar-outline,
+    .print-no-bg .print-bar-outline {
+      border: 1.5px solid #000000 !important;
+      background-color: #f8fafc !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+}
+
